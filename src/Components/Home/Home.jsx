@@ -20,7 +20,7 @@ export default function Home() {
                 <a class="headregister" asp-action="New_paper_submission" asp-controller="Authors_Desk">Register</a>
             </div>
             <a href="#about" class="scroll">
-                <img src="/img/down.png" class="scroll-icon" alt="Scroll Down" />
+                <img src="public/img/down.png" class="scroll-icon" alt="Scroll Down" />
             </a>
         </div>
     </div>

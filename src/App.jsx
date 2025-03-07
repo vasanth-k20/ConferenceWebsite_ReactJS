@@ -7,6 +7,7 @@ import About from './Components/About/About'
 import Keydates from './Components/KeyDates/Kedates'
 import Invitees from './Components/Invitees/Invitees'
 import Avenue from './Components/Avenue/Avenue'
+import AboutConference from './Components/AboutUs/AboutConference/AboutConference'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
       <Invitees/>
       <Avenue/>
       <Footer/>
+      <AboutConference/>
     </>
   )
 }

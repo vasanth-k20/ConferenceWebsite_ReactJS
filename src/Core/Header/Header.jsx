@@ -5,22 +5,25 @@ export default function Header() {
 
   useEffect(() => {
     // Handle dropdown toggle for normal and responsive navigation
-    const dropdowns = document.querySelectorAll('.nav-links .dropdown');
-
-    dropdowns.forEach((dropdown) => {
-      const toggle = dropdown.querySelector('a');
-      toggle.addEventListener('click', (e) => {
+    const handleDropdownToggle = (e) => {
+      const toggle = e.target.closest('.dropdown > a');
+      if (toggle) {
         e.preventDefault();
         e.stopPropagation();
+        const dropdown = toggle.parentElement;
         const isActive = dropdown.classList.contains('active');
+
+        // Close all other active dropdowns
         document.querySelectorAll('.nav-links .dropdown.active').forEach((activeDropdown) => {
-          activeDropdown.classList.remove('active');
+          if (activeDropdown !== dropdown) {
+            activeDropdown.classList.remove('active');
+          }
         });
-        if (!isActive) {
-          dropdown.classList.add('active');
-        }
-      });
-    });
+
+        // Toggle the clicked dropdown
+        dropdown.classList.toggle('active', !isActive);
+      }
+    };
 
     // Close dropdown if clicked outside
     const handleClickOutside = (e) => {
@@ -30,44 +33,59 @@ export default function Header() {
         });
       }
     };
-    document.addEventListener('click', handleClickOutside);
 
     // Handle menu toggle for responsive design
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.top-nav ul');
-
-    if (menuToggle && navMenu) {
-      menuToggle.addEventListener('click', () => {
+    const handleMenuToggle = () => {
+      const navMenu = document.querySelector('.top-nav ul');
+      if (navMenu) {
         navMenu.classList.toggle('active');
-      });
-    }
+      }
+    };
 
     // Cleanup when resizing the window
     const handleResize = () => {
       if (window.innerWidth > 768) {
-        navMenu.classList.remove('active');
+        const navMenu = document.querySelector('.top-nav ul');
+        if (navMenu) {
+          navMenu.classList.remove('active');
+        }
         document.querySelectorAll('.nav-links .dropdown.active').forEach((dropdown) => {
           dropdown.classList.remove('active');
         });
       }
     };
-    window.addEventListener('resize', handleResize);
 
     // Highlight active link
-    const navLinks = document.querySelectorAll('.top-nav ul li a');
-    navLinks.forEach((link) => {
-      if (link.href === window.location.href) {
-        link.classList.add('active');
-        const parentDropdown = link.closest('.dropdown');
-        if (parentDropdown) {
-          parentDropdown.querySelector('a').classList.add('active');
+    const highlightActiveLink = () => {
+      const navLinks = document.querySelectorAll('.top-nav ul li a');
+      navLinks.forEach((link) => {
+        if (link.href === window.location.href) {
+          link.classList.add('active');
+          const parentDropdown = link.closest('.dropdown');
+          if (parentDropdown) {
+            parentDropdown.querySelector('a').classList.add('active');
+          }
         }
-      }
-    });
+      });
+    };
+
+    // Attach event listeners
+    document.addEventListener('click', handleDropdownToggle);
+    document.addEventListener('click', handleClickOutside);
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', handleMenuToggle);
+    }
+    window.addEventListener('resize', handleResize);
+    highlightActiveLink();
 
     // Cleanup event listeners on component unmount
     return () => {
+      document.removeEventListener('click', handleDropdownToggle);
       document.removeEventListener('click', handleClickOutside);
+      if (menuToggle) {
+        menuToggle.removeEventListener('click', handleMenuToggle);
+      }
       window.removeEventListener('resize', handleResize);
     };
   }, []);
@@ -87,20 +105,18 @@ export default function Header() {
               <a href="/">Home</a>
             </li>
             <li className="dropdown">
-              <div>
-                <a href="#about">
-                  About Us <i className="fas fa-chevron-down dropdown-icon"></i>
-                </a>
-                <div className="dropdown-menu">
-                  <div><a href="/AboutUs/About_the_Conference">About the Conference</a></div>
-                  <div><a href="/AboutUs/Scope_of_conference">Scope of Conference</a></div>
-                  <div><a href="/AboutUs/Origizing_Comittee">Organizing Committee</a></div>
-                  <div><a href="/AboutUs/Editorial_Board">Editorial Board</a></div>
-                </div>
+              <a href="">
+                About Us <i className="fas fa-chevron-down dropdown-icon"></i>
+              </a>
+              <div className="dropdown-menu">
+                <div><a href="/AboutUs/AboutConference">About the Conference</a></div>
+                <div><a href="/AboutUs/Scope_of_conference">Scope of Conference</a></div>
+                <div><a href="/AboutUs/Origizing_Comittee">Organizing Committee</a></div>
+                <div><a href="/AboutUs/Editorial_Board">Editorial Board</a></div>
               </div>
             </li>
             <li className="dropdown">
-              <a href="#author's">
+              <a href="">
                 Author's Desk <i className="fas fa-chevron-down dropdown-icon"></i>
               </a>
               <div className="dropdown-menu">

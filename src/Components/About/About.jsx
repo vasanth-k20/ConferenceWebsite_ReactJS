@@ -8,7 +8,7 @@ export default function About() {
     <div class="container">
         <div class="about" id="about">
             <div class="about-left">
-                <img class="red" src="~/img/about.jpg" alt="About Us Image" />
+                <img class="red" src="public/img/about.jpg" alt="About Us Image" />
             </div>
             <div class="left-about">
                 <small>ABOUT US</small>

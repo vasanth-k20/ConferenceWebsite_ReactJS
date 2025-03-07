@@ -9,12 +9,12 @@ export default function Invitees() {
     };
 
     const portfolioItems = [
-        { id: 1, category: 'key', imgSrc: '/img/key1.jpg', title: 'Key Invitees' },
-        { id: 2, category: 'key', imgSrc: '/img/key2.jpg', title: 'Key Invitees' },
-        { id: 3, category: 'chief', imgSrc: '/img/chi1.jpg', title: 'Chief Patrons' },
-        { id: 4, category: 'chief', imgSrc: '/img/chi2.jpg', title: 'Chief Patrons' },
-        { id: 5, category: 'chief', imgSrc: '/img/chi3.jpg', title: 'Chief Patrons' },
-        { id: 6, category: 'chief', imgSrc: '/img/chi4.jpg', title: 'Chief Patrons' },
+        { id: 1, category: 'key', imgSrc: 'public/img/key1.jpg', title: 'Key Invitees' },
+        { id: 2, category: 'key', imgSrc: 'public/img/key2.jpg', title: 'Key Invitees' },
+        { id: 3, category: 'chief', imgSrc: 'public/img/chi1.jpg', title: 'Chief Patrons' },
+        { id: 4, category: 'chief', imgSrc: 'public/img/chi2.jpg', title: 'Chief Patrons' },
+        { id: 5, category: 'chief', imgSrc: 'public/img/chi3.jpg', title: 'Chief Patrons' },
+        { id: 6, category: 'chief', imgSrc: 'public/img/chi4.jpg', title: 'Chief Patrons' },
     ];
 
     return (
