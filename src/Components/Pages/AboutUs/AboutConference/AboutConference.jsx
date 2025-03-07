@@ -1,5 +1,6 @@
 import React from 'react'
 import './AbtConf.css';
+import Avenue from '../../../Avenue/Avenue';
 
 export default function AboutConference() {
     return (
@@ -9,11 +10,7 @@ export default function AboutConference() {
                 id="intro-example"
                 className="img-fluid"
                 style={{
-                    height: '30vh',
-                    width: '100%',
-                    backgroundImage: "url('/img/banner.jpg')",
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    
                 }}
             >
                 <div className="mask w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column justify-content-center align-items-center">
@@ -47,6 +44,10 @@ export default function AboutConference() {
                     </div>
                 </div>
             </section>
+
+            <div>
+                <Avenue />
+            </div>
         </>
     )
 }

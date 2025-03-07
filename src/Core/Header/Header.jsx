@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
 
@@ -109,7 +110,7 @@ export default function Header() {
                 About Us <i className="fas fa-chevron-down dropdown-icon"></i>
               </a>
               <div className="dropdown-menu">
-                <div><a href="/AboutUs/AboutConference">About the Conference</a></div>
+                <div><Link to="/About">About the Conference</Link></div>
                 <div><a href="/AboutUs/Scope_of_conference">Scope of Conference</a></div>
                 <div><a href="/AboutUs/Origizing_Comittee">Organizing Committee</a></div>
                 <div><a href="/AboutUs/Editorial_Board">Editorial Board</a></div>

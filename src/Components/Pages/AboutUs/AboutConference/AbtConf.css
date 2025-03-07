@@ -16,6 +16,16 @@
     text-align: justify;
 }
 
+.img-fluid{
+    margin-top: 80px;
+    height: 30vh;
+    width: 100%;
+    background: url('/img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
 @media (max-width: 768px) {
     .elementor-widget-container {
         font-size: 1.1em;
