@@ -110,10 +110,10 @@ export default function Header() {
                 About Us <i className="fas fa-chevron-down dropdown-icon"></i>
               </a>
               <div className="dropdown-menu">
-                <div><Link to="/About">About the Conference</Link></div>
-                <div><a href="/AboutUs/Scope_of_conference">Scope of Conference</a></div>
-                <div><a href="/AboutUs/Origizing_Comittee">Organizing Committee</a></div>
-                <div><a href="/AboutUs/Editorial_Board">Editorial Board</a></div>
+                <div><Link to="/about">About the Conference</Link></div>
+                <div><Link to="/scope">Scope the Conference</Link></div>
+                <div><Link to="/organize">Origizing Comittee</Link></div>
+                <div><Link to="/editorial">Editorial Board</Link></div>
               </div>
             </li>
             <li className="dropdown">
@@ -121,13 +121,13 @@ export default function Header() {
                 Author's Desk <i className="fas fa-chevron-down dropdown-icon"></i>
               </a>
               <div className="dropdown-menu">
-                <div><a href="/Authors_Desk/Key_Date">Key Date</a></div>
-                <div><a href="/Authors_Desk/Registration_Details">Registration Details</a></div>
-                <div><a href="/Authors_Desk/New_paper_submission">New Paper Submission</a></div>
+                <div><Link to="/keydates">Key Date</Link></div>
+                <div><Link to="/registration">Registration Details</Link></div>
+                <div><Link to="/papersub">New Paper Submission</Link></div>
               </div>
             </li>
             <li className="active">
-              <a href="/Home/Contact">Contact</a>
+            <div><Link to="/contact">Contact</Link></div>
             </li>
           </ul>
         </nav>
