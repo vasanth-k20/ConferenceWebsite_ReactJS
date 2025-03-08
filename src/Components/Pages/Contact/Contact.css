@@ -5,6 +5,10 @@ body {
     background-color: #F7F7F7;
 }
 
+.container{
+    margin-top: 80px;
+    max-width: 70%;
+}
 
 #contact h5 {
     padding-inline-start: 27px;

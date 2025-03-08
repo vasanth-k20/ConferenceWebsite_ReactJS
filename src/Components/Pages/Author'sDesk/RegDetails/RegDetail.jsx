@@ -12,12 +12,12 @@ export default function RegistrationDetails() {
                 style={{
                     height: '30vh',
                     width: '100%',
-                    backgroundImage: 'url("/img/bannerauthor.jpg")',
+                    backgroundImage: 'url("public/img/bannerauthor.jpg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
             >
-                <div className="mask w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column justify-content-center align-items-center">
+                <div className="mask w-100 h-100 d-flex flex-column justify-content-center align-items-center">
                     <div className="text-white text-center px-3">
                         <h2 className="fw-bold display-5 text-uppercase text-light">Registration Details</h2>
                         <div className="divider mx-auto my-3"></div>

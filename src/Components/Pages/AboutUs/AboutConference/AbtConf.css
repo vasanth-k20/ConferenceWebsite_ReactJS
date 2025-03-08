@@ -20,7 +20,7 @@
     margin-top: 80px;
     height: 30vh;
     width: 100%;
-    background: url('/img/banner.jpg');
+    background: url('public/img/banner.jpg');
     background-size: cover;
     background-position: center;
 }

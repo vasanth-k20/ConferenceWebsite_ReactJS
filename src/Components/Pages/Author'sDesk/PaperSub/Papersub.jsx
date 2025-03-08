@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './PaperSub.css';
+import Avenue from '../../../Avenue/Avenue';
 
 export default function PaperSubmission() {
     const [formData, setFormData] = useState({
@@ -39,12 +40,12 @@ export default function PaperSubmission() {
                 style={{
                     height: '30vh',
                     width: '100%',
-                    backgroundImage: 'url("/img/bannerauthor.jpg")',
+                    backgroundImage: 'url("public/img/bannerauthor.jpg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
             >
-                <div className="mask w-100 h-100 bg-dark bg-opacity-50 d-flex flex-column justify-content-center align-items-center">
+                <div className="mask w-100 h-100 d-flex flex-column justify-content-center align-items-center">
                     <div className="text-white text-center px-3">
                         <h2 className="fw-bold display-5 text-uppercase text-light">New Paper Submission</h2>
                         <div className="divider mx-auto my-3"></div>
@@ -167,27 +168,30 @@ export default function PaperSubmission() {
                     <div className="card">
                         <h2>Submission Guidelines</h2>
                         <ul>
-                            <li>Papers must be written in English</li>
-                            <li>Maximum length: 8 pages including figures and references</li>
-                            <li>Use the IEEE conference format</li>
-                            <li>Submit in PDF, Docx, PPTX format</li>
-                            <li>Include abstract (max 250 words)</li>
-                            <li>Blind all author information for review</li>
+                            <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> Papers must be written in English</li>
+                            <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> Maximum length: 8 pages including figures and references</li>
+                            <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> Use the IEEE conference format</li>
+                            <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> Submit in PDF, Docx, PPTX format</li>
+                            <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> Include abstract (max 250 words)</li>
+                            <li><span class="check-icon"><i class="fa-solid fa-circle-check"></i></span> Blind all author information for review</li>
                         </ul>
                     </div>
 
                     <div className="card">
                         <h2>Important Notes</h2>
                         <ul>
-                            <li>All papers undergo a double-blind peer review process</li>
-                            <li>At least one author must register for the conference</li>
-                            <li>Plagiarism checks will be performed</li>
-                            <li>Multiple submissions are not allowed</li>
-                            <li>Authors must present accepted papers at the conference</li>
-                            <li>Papers will be published in the conference proceedings</li>
+                            <li><span class="info-icon"><i class="fa-solid fa-circle-info"></i></span> All papers undergo a double-blind peer review process</li>
+                            <li><span class="info-icon"><i class="fa-solid fa-circle-info"></i></span> At least one author must register for the conference</li>
+                            <li><span class="info-icon"><i class="fa-solid fa-circle-info"></i></span> Plagiarism checks will be performed</li>
+                            <li><span class="info-icon"><i class="fa-solid fa-circle-info"></i></span> Multiple submissions are not allowed</li>
+                            <li><span class="info-icon"><i class="fa-solid fa-circle-info"></i></span> Authors must present accepted papers at the conference</li>
+                            <li><span class="info-icon"><i class="fa-solid fa-circle-info"></i></span> Papers will be published in the conference proceedings</li>
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div>
+                <Avenue/>
             </div>
         </div>
     );
