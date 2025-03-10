@@ -9,6 +9,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    max-width: 70%;
+    margin: auto;
 }
 
 .about-left, .left-about {
@@ -102,6 +104,10 @@ a.browse {
         text-align: center;
     }
 
+    .abo-container{
+        width: 100%;
+    }
+
     .about-left, .left-about {
         max-width: 100%;
         padding:20px 0;
@@ -140,6 +146,8 @@ a.browse {
 @media (max-width: 480px) {
     .about {
         padding: 3em 1em;
+        max-width: 100%;
+
     }
 
     .about-left img {

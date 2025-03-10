@@ -10,7 +10,6 @@ export default function Home() {
     return (
         <>
             <section class="header">
-                <div class="container">
                     <div class="header-matter">
                         <h2>WELCOME TO <span>ICCSI</span></h2>
                         <h3>International Conference on Computer <br />Science Innovations</h3>
@@ -23,13 +22,12 @@ export default function Home() {
                         </div>
                         {/* <!-- Register Button --> */}
                         <div class="register">
-                            <a class="headregister" asp-action="New_paper_submission" asp-controller="Authors_Desk">Register</a>
+                            <a class="headregister" href="/papersub">Register</a>
                         </div>
                         <a href="#about" class="scroll">
                             <img src="public/img/down.png" class="scroll-icon" alt="Scroll Down" />
                         </a>
                     </div>
-                </div>
             </section>
 
             <div>

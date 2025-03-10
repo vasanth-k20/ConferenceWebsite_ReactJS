@@ -5,7 +5,6 @@ export default function About() {
   return (
     // <!--content(about)-->
 <section class="content">
-    <div class="container">
         <div class="about" id="about">
             <div class="about-left">
                 <img class="red" src="public/img/about.jpg" alt="About Us Image" />
@@ -26,7 +25,6 @@ export default function About() {
                 </p>
             </div>
         </div>
-    </div>
 </section>
   )
 }

@@ -33,7 +33,7 @@ export default function Avenue() {
 
                 {/* Register Button */}
                 <div className="register-button-container">
-                    <a className="register-button" href="/Authors_Desk/New_paper_submission">Register</a>
+                    <a className="register-button" href="/papersub">Register</a>
                 </div>
             </div>
 
@@ -49,9 +49,7 @@ export default function Avenue() {
                     <p><i className="fas fa-map"></i> Address: 123 Street, City, Country</p>
                 </div>
             </div>
-
         </div>
-
     </div>
 </section>
 

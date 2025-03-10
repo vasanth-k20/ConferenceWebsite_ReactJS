@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
+  const location = useLocation();
 
   useEffect(() => {
     // Handle dropdown toggle for normal and responsive navigation
@@ -56,7 +57,7 @@ export default function Header() {
       }
     };
 
-    // Highlight active link
+    // Highlight active link based on current URL path
     const highlightActiveLink = () => {
       const navLinks = document.querySelectorAll('.top-nav ul li a');
       navLinks.forEach((link) => {
@@ -66,7 +67,21 @@ export default function Header() {
           if (parentDropdown) {
             parentDropdown.querySelector('a').classList.add('active');
           }
+        } else {
+          link.classList.remove('active');
         }
+      });
+    };
+
+    // Close dropdown when a link is clicked inside it
+    const closeDropdownOnClick = () => {
+      const dropdownLinks = document.querySelectorAll('.dropdown-menu div a');
+      dropdownLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          document.querySelectorAll('.nav-links .dropdown.active').forEach((dropdown) => {
+            dropdown.classList.remove('active');
+          });
+        });
       });
     };
 
@@ -79,6 +94,7 @@ export default function Header() {
     }
     window.addEventListener('resize', handleResize);
     highlightActiveLink();
+    closeDropdownOnClick();
 
     // Cleanup event listeners on component unmount
     return () => {
@@ -89,7 +105,7 @@ export default function Header() {
       }
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [location]);  // Re-run the effect every time the URL changes
 
   return (
     <header className="header-top">
@@ -102,32 +118,36 @@ export default function Header() {
         <nav className="top-nav">
           <span className="menu-toggle">&#9776;</span>
           <ul className="nav-links">
-            <li className="active">
-              <a href="/">Home</a>
+            <li>
+              <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+                Home
+              </Link>
             </li>
             <li className="dropdown">
-              <a href="">
+              <a href="#">
                 About Us <i className="fas fa-chevron-down dropdown-icon"></i>
               </a>
               <div className="dropdown-menu">
                 <div><Link to="/about">About the Conference</Link></div>
-                <div><Link to="/scope">Scope the Conference</Link></div>
-                <div><Link to="/organize">Origizing Comittee</Link></div>
+                <div><Link to="/scope">Scope of the Conference</Link></div>
+                <div><Link to="/organize">Organizing Committee</Link></div>
                 <div><Link to="/editorial">Editorial Board</Link></div>
               </div>
             </li>
             <li className="dropdown">
-              <a href="">
+              <a href="#">
                 Author's Desk <i className="fas fa-chevron-down dropdown-icon"></i>
               </a>
               <div className="dropdown-menu">
-                <div><Link to="/keydates">Key Date</Link></div>
+                <div><Link to="/keydates">Key Dates</Link></div>
                 <div><Link to="/registration">Registration Details</Link></div>
                 <div><Link to="/papersub">New Paper Submission</Link></div>
               </div>
             </li>
-            <li className="active">
-            <div><Link to="/contact">Contact</Link></div>
+            <li>
+              <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>
