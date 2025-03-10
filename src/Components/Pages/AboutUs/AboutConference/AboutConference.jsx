@@ -6,14 +6,11 @@ export default function AboutConference() {
     return (
         <>
             {/* Background Image Section */}
-            <div
-                id="intro-example"
-                className="img-fluid"
-            >
+            <div id="intro-example" className="img-fluid animated fadeIn" style={{ height: "30vh", marginTop: "80px", width: "100%", backgroundImage: "url('public/img/banner.jpg')", backgroundSize: "cover", backgroundPosition: "center", }}>
                 <div className="mask w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-                    <div className="text-white text-center px-3">
+                    <div className="text-white text-start px-3 animated slideInDown">
                         <h2 className="fw-bold display-5 text-uppercase text-light">About the Conference</h2>
-                        <div className="divider mx-auto my-3" />
+                        <div className="divider mx-auto my-3"></div>
                     </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@ export default function ContactSection() {
 
   return (
     <section className="contact-our-area pb-3" id="contact">
-      <div className="container pb-5 pt-4 text-black">
+      <div className="contactt pb-5 pt-4 text-black">
         <div className="row">
           <div className="col-12">
             <div className="mb-4 pt-5">
