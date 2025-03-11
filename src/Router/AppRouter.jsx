@@ -10,24 +10,26 @@ import KeyDates from '../Components/Pages/Author\'sDesk/KeyDates/Key'
 import RegistrationDetails from '../Components/Pages/Author\'sDesk/RegDetails/RegDetail'
 import PaperSubmission from '../Components/Pages/Author\'sDesk/PaperSub/Papersub'
 import ContactSection from '../Components/Pages/Contact/Contact'
+import ScrollToTop from '../Scrolltotop'
 
 export default function AppRouter() {
   return (
     <div>
       <BrowserRouter>
-      <Routes>
-        <Route element={<Main />}>
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<AboutConference />}/>
-        <Route path="/scope" element={<ScopeOfConference />}/>
-        <Route path="/organize" element={<OrganizingCommittee />}/>
-        <Route path="/editorial" element={<EditorialBoard />}/>
-        <Route path="/keydates" element={<KeyDates />}/>
-        <Route path="/registration" element={<RegistrationDetails />}/>
-        <Route path="/papersub" element={<PaperSubmission />}/>
-        <Route path="/contact" element={<ContactSection />}/>
-        </Route>
-      </Routes>
+        <ScrollToTop/>
+          <Routes>
+            <Route element={<Main />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutConference />} />
+              <Route path="/scope" element={<ScopeOfConference />} />
+              <Route path="/organize" element={<OrganizingCommittee />} />
+              <Route path="/editorial" element={<EditorialBoard />} />
+              <Route path="/keydates" element={<KeyDates />} />
+              <Route path="/registration" element={<RegistrationDetails />} />
+              <Route path="/papersub" element={<PaperSubmission />} />
+              <Route path="/contact" element={<ContactSection />} />
+            </Route>
+          </Routes>
       </BrowserRouter>
     </div>
   )
