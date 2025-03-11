@@ -12,25 +12,62 @@ export default function PaperSubmission() {
         AuthorCategory: '',
         PaperFile: null,
     });
+
     const [message, setMessage] = useState('');
     const [messageType, setMessageType] = useState('');
 
     const handleChange = (e) => {
         const { name, value, files } = e.target;
         if (name === 'PaperFile') {
-            setFormData({ ...formData, [name]: files[0] });
+            setFormData({ ...formData, PaperFile: files[0] });
         } else {
             setFormData({ ...formData, [name]: value });
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission here
-        setMessage('Paper submitted successfully!');
-        setMessageType('alert-success');
-    };
 
+        const formDataToSend = new FormData();
+        formDataToSend.append('title', formData.Papertitle);
+        formDataToSend.append('fullName', formData.AuthorFullName);
+        formDataToSend.append('mobileNumber', formData.AuthorMobile);
+        formDataToSend.append('email', formData.AuthorEmail);
+        formDataToSend.append('institution', formData.AuthorInstitution);
+        formDataToSend.append('firstAuthorCategory', formData.AuthorCategory);
+        formDataToSend.append('file', formData.PaperFile);
+
+        try {
+            const response = await fetch('http://localhost:5000/api/submit-paper', {
+                method: 'POST',
+                body: formDataToSend,
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setMessage(result.message);
+                setMessageType('alert-success');
+                setFormData({
+                    Papertitle: '',
+                    AuthorFullName: '',
+                    AuthorMobile: '',
+                    AuthorEmail: '',
+                    AuthorInstitution: '',
+                    AuthorCategory: '',
+                    PaperFile: null,
+                });
+            } else {
+                setMessage(result.error || 'Paper submission failed.');
+                setMessageType('alert-danger');
+            }
+        } catch (error) {
+            console.error('Error submitting paper:', error);
+            setMessage('An error occurred while submitting your paper.');
+            setMessageType('alert-danger');
+        }
+    };
+    
     return (
         <div>
             {/* Background Image Section */}
