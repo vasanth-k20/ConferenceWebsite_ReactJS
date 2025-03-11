@@ -76,3 +76,16 @@ body {
 #conh {
     color: #000;
 }
+
+@media (max-width: 1024px){
+    .contactt{
+       max-width: 80%;
+    }
+}
+@media (max-width: 768px) {
+    .contactt{
+        margin-left: 0px;
+        margin-right: 0px;
+        max-width: 100%;
+    }
+}

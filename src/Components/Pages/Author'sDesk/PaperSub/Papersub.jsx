@@ -92,7 +92,7 @@ export default function PaperSubmission() {
 
             <div className="main_container">
                 {/* Paper Submission form */}
-                <section className="container">
+                <section className="papersub">
                     {/* Alert for Messages */}
                     {message && (
                         <div className="error">

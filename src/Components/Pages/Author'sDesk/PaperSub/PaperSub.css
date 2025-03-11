@@ -16,7 +16,7 @@ body {
 }
 
 /* Container */
-.container {
+.papersub {
     flex: 1;
     min-width: 600px; /* Prevents shrinking too much */
     max-width: 800px; /* Allows expansion */
@@ -194,7 +194,7 @@ form {
         gap: 20px; /* Reduced spacing for smaller screens */
     }
 
-    .container {
+    .papersub {
         max-width: 80%;
         min-width: auto;
     }
@@ -221,7 +221,7 @@ form {
         padding: 10px 16px;
     }
 
-    .container {
+    .papersub {
         max-width: 100%;
     }
 
@@ -258,7 +258,7 @@ form {
         gap: 40px; /* More space for better layout */
     }
 
-    .container {
+    .papersub {
         min-width: 650px;
         max-width: 850px;
     }
