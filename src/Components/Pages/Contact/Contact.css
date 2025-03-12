@@ -5,11 +5,11 @@ body {
     background-color: #F7F7F7;
 }
 
-.container{
+.container {
     max-width: 70%;
 }
 
-.contactt{
+.contactt {
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
@@ -19,7 +19,7 @@ body {
 #contact h5 {
     padding-inline-start: 27px;
     font-size: 2.2rem;
-    text-align: start ;
+    text-align: start;
     color: #000;
     font-weight: bold;
     text-transform: uppercase;
@@ -27,33 +27,21 @@ body {
     letter-spacing: 1px;
 }
 
-#main_contact_form input {
-    border-color: #000;
+/* Default border color */
+input,
+textarea {
+    border-color: #000 !important;
 }
 
-    #main_contact_form input:hover {
-        border-color: #fcac45;
-        box-shadow: 0 0 6px rgba(43, 120, 228, 0.4);
-    }
-
-    #main_contact_form input:focus {
-        border-color: #fcac45;
-        box-shadow: 0 0 6px rgba(43, 120, 228, 0.4);
-    }
-
-#main_contact_form textarea {
-    border-color: #000;
+/* Hover and focus effect */
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+    border-color: #fcac45 !important;
+    box-shadow: 0 0 6px rgba(43, 120, 228, 0.4) !important;
 }
 
-    #main_contact_form textarea:hover {
-        border-color: #fcac45;
-        box-shadow: 0 0 6px rgba(43, 120, 228, 0.4);
-    }
-
-    #main_contact_form textarea:focus {
-        border-color: #fcac45;
-        box-shadow: 0 0 6px rgba(43, 120, 228, 0.4);
-    }
 .consub button {
     background: linear-gradient(135deg, #fdbd71, #ff9040);
     color: #000;
@@ -67,23 +55,31 @@ body {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-    .consub button:hover {
-        background: linear-gradient(135deg, #fdbd71, #ff9040);
-        color:#fff;
-        transform: translateY(-2px);
-    }
+.consub button:hover {
+    background: linear-gradient(135deg, #fdbd71, #ff9040);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.consub button:focus,
+.consub button:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
 
 #conh {
     color: #000;
 }
 
-@media (max-width: 1024px){
-    .contactt{
-       max-width: 80%;
+@media (max-width: 1024px) {
+    .contactt {
+        max-width: 80%;
     }
 }
+
 @media (max-width: 768px) {
-    .contactt{
+    .contactt {
         margin-left: 0px;
         margin-right: 0px;
         max-width: 100%;
