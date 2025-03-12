@@ -13,6 +13,7 @@ export default function PaperSubmission() {
         PaperFile: null,
     });
 
+    const [errors, setErrors] = useState({});
     const [message, setMessage] = useState('');
     const [messageType, setMessageType] = useState('');
 
@@ -27,6 +28,23 @@ export default function PaperSubmission() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        let newErrors = {};
+
+        if (!formData.Papertitle.trim()) newErrors.Papertitle = "Paper Title is required";
+        if (!formData.AuthorFullName.trim()) newErrors.AuthorFullName = "Author Full Name is required";
+        if (!formData.AuthorMobile.trim()) newErrors.AuthorMobile = "Author Mobile Number is required";
+        if (!formData.AuthorEmail.trim()) newErrors.AuthorEmail = "Author Email Address is required";
+        if (!formData.AuthorInstitution.trim()) newErrors.AuthorInstitution = "Author Institution Name is required";
+        if (!formData.AuthorCategory.trim()) newErrors.AuthorCategory = "Author Category is required";
+        if (!formData.PaperFile) newErrors.PaperFile = "Paper File is required";
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setErrors({});
 
         const formDataToSend = new FormData();
         formDataToSend.append('title', formData.Papertitle);
@@ -67,6 +85,7 @@ export default function PaperSubmission() {
             setMessageType('alert-danger');
         }
     };
+
     
     return (
         <div>
@@ -117,6 +136,7 @@ export default function PaperSubmission() {
                                         onChange={handleChange}
                                         required
                                     />
+                                    {errors.Papertitle && <div className="text-danger">{errors.Papertitle}</div>}
                                 </div>
 
                                 <div className="form-group">
@@ -128,6 +148,7 @@ export default function PaperSubmission() {
                                         onChange={handleChange}
                                         required
                                     />
+                                    {errors.AuthorFullName && <div className="text-danger">{errors.AuthorFullName}</div>}
                                 </div>
 
                                 <div className="form-group">
@@ -139,6 +160,7 @@ export default function PaperSubmission() {
                                         onChange={handleChange}
                                         required
                                     />
+                                    {errors.AuthorMobile && <div className="text-danger">{errors.AuthorMobile}</div>}
                                 </div>
 
                                 <div className="form-group">
@@ -150,6 +172,7 @@ export default function PaperSubmission() {
                                         onChange={handleChange}
                                         required
                                     />
+                                    {errors.AuthorEmail && <div className="text-danger">{errors.AuthorEmail}</div>}
                                 </div>
 
                                 <div className="form-group">
@@ -161,6 +184,7 @@ export default function PaperSubmission() {
                                         onChange={handleChange}
                                         required
                                     />
+                                    {errors.AuthorInstitution && <div className="text-danger">{errors.AuthorInstitution}</div>}
                                 </div>
 
                                 <div className="form-group">
@@ -178,10 +202,11 @@ export default function PaperSubmission() {
                                         <option value="researcher">Researcher</option>
                                         <option value="others">Others</option>
                                     </select>
+                                    {errors.AuthorCategory && <div className="text-danger">{errors.AuthorCategory}</div>}
                                 </div>
 
                                 <div className="form-group">
-                                    <label className="form-label fw-bold"> Upload Paper *</label>
+                                    <label className="form-label fw-bold">Upload Paper *</label>
                                     <input
                                         type="file"
                                         name="PaperFile"
@@ -190,6 +215,7 @@ export default function PaperSubmission() {
                                         onChange={handleChange}
                                         required
                                     />
+                                    {errors.PaperFile && <div className="text-danger">{errors.PaperFile}</div>}
                                 </div>
 
                                 <div className="form-button">
