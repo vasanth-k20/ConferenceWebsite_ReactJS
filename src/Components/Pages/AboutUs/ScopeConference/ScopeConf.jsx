@@ -12,7 +12,7 @@ export default function ScopeOfConference() {
                 style={{
                     height: '30vh',
                     width: '100%',
-                    backgroundImage: 'url("public/img/banner.jpg")',
+                    backgroundImage: 'url("/img/banner.jpg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}

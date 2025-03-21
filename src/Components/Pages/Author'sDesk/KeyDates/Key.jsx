@@ -12,7 +12,7 @@ export default function KeyDates() {
                 style={{
                     height: '30vh',
                     width: '100%',
-                    backgroundImage: 'url("public/img/bannerauthor.jpg")',
+                    backgroundImage: 'url("/img/bannerauthor.jpg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
